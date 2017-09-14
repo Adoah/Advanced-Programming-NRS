@@ -6,12 +6,11 @@
 */
 public class Splash {
 
-	public static void main(String[] args) 
+	public Splash()
 	{
-		splashScreen();
+		//zero argument constructor - empty for now
 	}
-	
-	public static void splashScreen()
+	public void splashScreen()
 	{	
 		System.out.println(""
 				+ "__________________ __________ ____  __.\n"
