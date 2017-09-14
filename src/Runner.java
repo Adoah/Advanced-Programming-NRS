@@ -12,5 +12,6 @@ public class Runner
 		Splash splash = new Splash();
 		//Call splashscreen
 		splash.splashScreen();
+		splash.fightSplash();
 	}
 }
