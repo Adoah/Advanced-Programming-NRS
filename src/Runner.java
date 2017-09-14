@@ -13,5 +13,7 @@ public class Runner
 		//Call splashscreen
 		splash.splashScreen();
 		splash.fightSplash();
+		Menu menu = new Menu();
+		menu.Display();
 	}
 }
