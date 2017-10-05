@@ -15,5 +15,7 @@ public class Runner
 		splash.fightSplash();
 		Menu menu = new Menu();
 		menu.Display();
+		Knife knife = new Knife();
+		
 	}
 }
