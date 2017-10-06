@@ -9,6 +9,8 @@ public class Knife extends Weapon
 		super.setWeight(.2);
 		super.setWearMultiplier(.8);
 		super.setStealth(.1);
+		super.setArmorPenetration(.3);
+		super.setMaximumPenetratableArmor('2','B');
 	}
 	//no mutators
 	//tostring method

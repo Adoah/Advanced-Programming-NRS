@@ -9,6 +9,9 @@ public class Weapon
 	private double rechargeTime;
 	private double wearMultiplier;
 	private double stealth;
+	private double armorPenetration;
+	private char maximumPenetratableArmor[] = new char[2];
+	private double aimTime;
 	
 	//constructors
 	public Weapon()
@@ -59,6 +62,18 @@ public class Weapon
 	{
 		return this.stealth;
 	}
+	public double getArmorPenetration()
+	{
+		return this.armorPenetration;
+	}
+	public char[] getMaximumPenetratableArmor()
+	{
+		return this.maximumPenetratableArmor;
+	}
+	public double getAimTime()
+	{
+		return this.aimTime;
+	}
 	//setters
 	public void setAtkDmg(int atkDmg)
 	{
@@ -91,6 +106,19 @@ public class Weapon
 	public void setStealth(double stealth)
 	{
 		this.stealth = stealth;
+	}
+	public void setArmorPenetration(double armorPenetration)
+	{
+		this.armorPenetration = armorPenetration;
+	}
+	public void setMaximumPenetratableArmor(char number, char character)
+	{
+		this.maximumPenetratableArmor[0] = number;
+		this.maximumPenetratableArmor[1] = character;
+	}
+	public void setAimTime(double aimTime)
+	{
+		this.aimTime = aimTime;
 	}
 	
 	//to string method
