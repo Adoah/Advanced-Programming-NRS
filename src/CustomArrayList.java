@@ -60,7 +60,7 @@ public class CustomArrayList
 	}
 	public void addAt(int position, int value)
 	{
-		if(size > array.length - 1)
+		if(size > array.length - 2)
 		{
 			doubleSize();
 			for(int i = array.length; i > position; i--)
@@ -71,10 +71,11 @@ public class CustomArrayList
 		}
 		else
 		{
-			for(int i = array.length; i > position; i--)
+			for(int i = size; i > position; i--)
 			{
 				array[i+1] = array[i];
 			}
+			array[position] = value;
 			size++;
 		}
 	}
