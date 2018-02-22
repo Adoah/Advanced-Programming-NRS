@@ -58,26 +58,31 @@ public class CustomArrayList
 		//decrement size
 		size--;
 	}
-	public void addAt(int position, int value)
+	public void addAt(int index, int num)
 	{
 		if(size > array.length - 2)
 		{
 			doubleSize();
-			for(int i = array.length; i > position; i--)
+			for(int i = array.length; i > index; i--)
 			{
 				array[i+1] = array[i];
 			}
+			array[index] = num;
 			size++;
 		}
 		else
 		{
-			for(int i = size; i > position; i--)
+			for(int i = size; i > index; i--)
 			{
 				array[i+1] = array[i];
 			}
-			array[position] = value;
+			array[index] = num;
 			size++;
 		}
+	}
+	public void addFirst(int num)
+	{
+		addAt(num, 0);
 	}
 	public int get(int index)
 	{
@@ -85,7 +90,7 @@ public class CustomArrayList
 	}
 	public int size()
 	{
-		return this.array.length;
+		return this.size;
 	}
 	public String toString()
 	{
