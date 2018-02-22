@@ -24,9 +24,9 @@ public class CustomStack
 	public String toString()
 	{
 		String result = "";
-		for(int i = arraylist.size(); i > 0; i--)
+		for(int i = arraylist.size() - 1; i >= 0; i--)
 		{
-			result = result + Integer.toString(arraylist.get(i)) + " ";
+			result = result + Integer.toString(this.arraylist.get(i)) + " ";
 		}
 		return result;
 	}
