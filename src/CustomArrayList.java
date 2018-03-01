@@ -86,7 +86,14 @@ public class CustomArrayList
 	}
 	public int get(int index)
 	{
-		return this.array[index];
+		if(index <= size)
+		{	
+			return this.array[index];
+		}
+		else
+		{
+			return -1;
+		}
 	}
 	public int size()
 	{

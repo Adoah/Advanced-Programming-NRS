@@ -1,26 +1,25 @@
 public class CustomStack 
 {
-	CustomArrayList arraylist = new CustomArrayList();
+	private CustomArrayList arraylist = new CustomArrayList();
 	public CustomStack()
 	{
 		
 	}
-	
 	public void push(int num)
 	{
+		//for adding
 		arraylist.add(num);
 	}
-	
 	public void pop()
 	{
+		//for removing
 		arraylist.remove(arraylist.size() - 1);
 	}
-	
 	public int peek()
 	{
+		//for getting a value
 		return arraylist.get(arraylist.size() - 1);
 	}
-	
 	public String toString()
 	{
 		String result = "";
