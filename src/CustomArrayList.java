@@ -1,6 +1,8 @@
-public class CustomArrayList 
+import java.lang.reflect.Array;
+
+public class CustomArrayList <T>
 {
-	private int array[] = new int[3];
+	private Object array[] = new Object[3];
 	private int size = 0;
 	
 	public CustomArrayList()
@@ -8,7 +10,7 @@ public class CustomArrayList
 		
 	}
 	
-	public void add(int num)
+	public void add(T num)
 	{
 		if(size > array.length - 1)
 		{
@@ -22,7 +24,7 @@ public class CustomArrayList
 			size++;
 		}
 	}
-	public void addLast(int num)
+	public void addLast(T num)
 	{
 		if(size > array.length - 1)
 		{
@@ -36,15 +38,18 @@ public class CustomArrayList
 			size++;
 		}
 	}
-	
+	public void replace(int index, T num)
+	{
+		array[index] = num;
+	}
 	private void doubleSize()
 	{
 		//creates temporary array
-		int temp[] = new int[array.length];
+		Object temp[] = new Object[array.length];
 		//copies array over
 		System.arraycopy(array, 0, temp, 0, array.length);
 		//doubles original array size
-		array = new int[array.length * 2];
+		array = new Object[array.length * 2];
 		//copies temp to new doubled array
 		System.arraycopy(temp, 0, array, 0, temp.length);
 	}
@@ -58,7 +63,7 @@ public class CustomArrayList
 		//decrement size
 		size--;
 	}
-	public void addAt(int index, int num)
+	public void addAt(int index, T num)
 	{
 		if(size > array.length - 2)
 		{
@@ -80,25 +85,19 @@ public class CustomArrayList
 			size++;
 		}
 	}
-	public void addFirst(int num)
+	public void addFirst(T num)
 	{
-		addAt(num, 0);
+		addAt(0, num);
 	}
-	public int get(int index)
-	{
-		if(index <= size)
-		{	
-			return this.array[index];
-		}
-		else
-		{
-			return -1;
-		}
+	public T get(int index)
+	{	
+			return (T) this.array[index];
 	}
 	public int size()
 	{
 		return this.size;
 	}
+	/*
 	public String toString()
 	{
 		String result = "";
@@ -108,4 +107,5 @@ public class CustomArrayList
 		}
 		return result;
 	}
+	*/
 }

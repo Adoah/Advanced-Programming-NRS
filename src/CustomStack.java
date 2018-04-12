@@ -15,17 +15,17 @@ public class CustomStack
 		//for removing
 		arraylist.remove(arraylist.size() - 1);
 	}
-	public int peek()
+	//public int peek()
 	{
 		//for getting a value
-		return arraylist.get(arraylist.size() - 1);
+		//return arraylist.get(arraylist.size() - 1);
 	}
 	public String toString()
 	{
 		String result = "";
 		for(int i = arraylist.size() - 1; i >= 0; i--)
 		{
-			result = result + Integer.toString(this.arraylist.get(i)) + " ";
+			//result = result + Integer.toString(this.arraylist.get(i)) + " ";
 		}
 		return result;
 	}
