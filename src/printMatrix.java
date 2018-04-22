@@ -14,7 +14,7 @@ public class printMatrix
 		{
 			String line = "";
 			for(int j = 0; j < n; j++)
-			{
+			{			
 				line += " " + Integer.toString(ran.nextInt(10));
 			}
 			complete += line + "\n";
@@ -27,78 +27,73 @@ public class printMatrix
 		System.out.println("This is the first matrix: \n");
 		matrix1 = generateMatrix(n);
 		System.out.print(matrix1);
-		System.out.println("This is the second matrix: \n");
+		System.out.println("\nThis is the second matrix: \n");
 		matrix2 = generateMatrix(n);
 		System.out.print(matrix2);
 		
 		String added = "";
 		int maxlen = 0;
+		//identifying which matrix is longer
 		if(matrix1.length() > matrix2.length())
 		{
 			maxlen = matrix1.length();
-			strcpy(added, matrix1);
 		}
 		else
 		{
 			maxlen = matrix2.length();
-			strcpy(added, matrix2);
 		}
 		
 		for(int i = 0; i < maxlen; i++)
 		{
+			if(Character.isDigit(matrix1.charAt(i)))
+			{
+				
+			}
 			System.out.println(addMatrix());
 		}
 		
 	}
-	private static void strcpy(String added, String matrix12) {
-		// TODO Auto-generated method stub
-		
-	}
 
+	//something in this method isn't allowing it to increment the m1/2position. I iz confuzed
 	public static String addMatrix()
 	{
 		String m1value = "";
-		String m1pos1 = "";
 		for(int i = m1pos; i < matrix1.length(); i++)
 		{
-			if(matrix1.charAt(i) == ' ')
+			if(Character.isDigit(matrix1.charAt(i)))
 			{
-				m1pos1 += matrix1.charAt(i + 1);
-				if(matrix1.charAt(i + 2) == ' ')
+				m1value += matrix1.charAt(i);
+				if(Character.isDigit(matrix1.charAt(i + 1)))
 				{
-					
+					m1value += matrix1.charAt(i + 1);
 				}
-				else
-				{
-					m1pos1 += matrix1.charAt(i + 2);
-				}
+				System.out.println("Position M1: " + i);
+				System.out.println("Value M1: " + m1value);
 				m1pos = i;
 				break;
 			}
 		}
+		//m1pos++;
 		
 		String m2value = "";
-		String m2pos1 = "";
-		for(int i = m2pos; i < matrix2.length(); i++)
+		for(int n = m2pos; n < matrix2.length(); n++)
 		{
-			if(matrix2.charAt(i) == ' ')
+			if(Character.isDigit(matrix2.charAt(n)))
 			{
-				m2pos1 += matrix2.charAt(i + 1);
-				if(matrix2.charAt(i + 2) == ' ')
+				m2value += matrix2.charAt(n);
+				if(Character.isDigit(matrix2.charAt(n + 1)))
 				{
-					
+					m2value += matrix2.charAt(n + 1);
 				}
-				else
-				{
-					m2pos1 += matrix2.charAt(i + 2);
-				}
-				m2pos = i;
+				System.out.println("Position M2: " + n);
+				System.out.println("Value M2: " + m2value);
+				m2pos = n;
 				break;
 			}
 		}
-		int added = Integer.parseInt(m1pos1) + Integer.parseInt(m2pos1);
+		//m2pos++;
+		int added = Integer.parseInt(m1value) + Integer.parseInt(m2value);
 		System.out.println(added);
 		return Integer.toString(added);		
-		
 	}
 }
