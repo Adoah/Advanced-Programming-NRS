@@ -42,7 +42,8 @@ public class printMatrix
 		{
 			maxlen = matrix2.length();
 		}
-		
+		//figure out if this is necessary???
+		//or if I can put all this into a while loop
 		for(int i = 0; i < maxlen; i++)
 		{
 			if(Character.isDigit(matrix1.charAt(i)))

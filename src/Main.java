@@ -34,7 +34,27 @@ public class Main {
 		System.out.println(stack.toString());
 		*/
 		
-		printMatrix.printMatrix(7);
+		//printMatrix.printMatrix(7);
+		
+		Room[][] roomArr = new Room[5][5];
+		
+		for(int i = 0; i < 5; i++)
+		{
+			for(int j = 0; j < 5; j++)
+			{
+				Room room = new Room(i, j);
+				roomArr[i][j] = room;
+			}
+		}
+		
+		for(int i = 0; i < 5; i++)
+		{
+			for(int j = 0; j < 5; j++)
+			{
+				System.out.println(roomArr[i][j].getPosition());
+			}
+		}
+		
 	}
 
 }
